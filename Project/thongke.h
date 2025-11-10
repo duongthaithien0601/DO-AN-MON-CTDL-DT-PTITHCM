@@ -26,17 +26,6 @@ inline std::vector<const DauSach*> thongke_top10_theo_luot_muon(const std::vecto
     return a;
 }
 
-// ---- Danh sach phieu qua han ----
-struct TKQuaHanRow {
-    int maThe = 0;
-    std::string hoTen;
-    std::string maSach;
-    std::string isbn;
-    std::string tenSach;
-    Date ngayMuon{};
-    int tre = 0; // so ngay tre (>0)
-};
-
 inline const DauSach* _tk_find_ds_by_isbn_const(const std::vector<DauSach*>& a, const std::string& isbn) {
     for (auto* ds : a) { if (ds != NULL && ds->ISBN == isbn) { return ds; } }
     return NULL;

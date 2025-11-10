@@ -7,19 +7,7 @@
 #include <ctime>
 #include "cautruc.h"
 
-// ========================= KHAI BAO CAY DOC GIA (BST) =========================
-
-struct DocGiaNode {
-    DocGia info;
-    DocGiaNode* left;
-    DocGiaNode* right;
-
-    explicit DocGiaNode(const DocGia& v) : info(v), left(NULL), right(NULL) {
-    }
-};
-
 // ========================= TIEN ICH NOI BO (BST) =========================
-
 inline DocGiaNode* _find_min(DocGiaNode* root) {
     if (root == NULL) {
         return NULL;
@@ -173,6 +161,3 @@ inline int dem_tong_doc_gia(DocGiaNode* root) {
     }
     return 1 + dem_tong_doc_gia(root->left) + dem_tong_doc_gia(root->right);
 }
-
-
-

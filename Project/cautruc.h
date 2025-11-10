@@ -33,7 +33,6 @@ struct DanhMucSachNode {
     TrangThaiBanSao trangThai; // cho muon / da muon 
     std::string viTri;         // "Ke A - Hang 1"
     DanhMucSachNode* next;
-
     DanhMucSachNode() : trangThai(BANSAO_CHO_MUON), next(NULL) {
     }
 };
@@ -48,7 +47,6 @@ struct DauSach {
     int soLuongBanSao;
     int soLuotMuon;
     DanhMucSachNode* dmsHead;
-
     DauSach()
         : soTrang(0), namXB(0), soLuongBanSao(0),
         soLuotMuon(0), dmsHead(NULL) {
@@ -61,7 +59,6 @@ struct MuonTraNode {
     Date ngayTra;
     TrangThaiMuonTra trangThai;
     MuonTraNode* next;
-
     MuonTraNode() : trangThai(MT_DANG_MUON), next(NULL) {
     }
 };
@@ -75,6 +72,24 @@ struct DocGia {
     MuonTraNode* mtHead;
     DocGia() : maThe(0), phai("Nam"), trangThaiThe(1), mtHead(NULL) {
     }
+};
+
+struct DocGiaNode {
+    DocGia info;
+    DocGiaNode* left;
+    DocGiaNode* right;
+    explicit DocGiaNode(const DocGia& v) : info(v), left(NULL), right(NULL) {
+    }
+};
+
+struct TKQuaHanRow {
+    int maThe = 0;
+    std::string hoTen;
+    std::string maSach;
+    std::string isbn;
+    std::string tenSach;
+    Date ngayMuon{};
+    int tre = 0; // so ngay tre (>0)
 };
 
 // ======================= HÀM TIỆN ÍCH (CHUỖI, NGÀY, MÃ SÁCH, v.v.) =======================
